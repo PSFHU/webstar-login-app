@@ -1,0 +1,89 @@
+/* You can add global styles to this file, and also import other style files */
+
+@mixin local-font($filename,$simple-name)
+    @font-face
+        font-family: $simple-name
+        src: url("../assets/#{$filename}.ttf")
+
+@include local-font("Starjedi","StarJedi")
+@include local-font("SfDistantGalaxyAltoutline-e2Bp","DistantGalaxy")
+@include local-font("Poppins-Bold","PoppinsBold")
+@include local-font("Poppins-Regular","PoppinsRegular")
+
+$login-sub-title-font: 30px StarJedi
+$login-main-title-font: 70px DistantGalaxy
+$login-button-font: 16px PoppinsBold
+
+$field-title-font: 14px PoppinsBold
+$field-text-font: 16px PoppinsRegular
+
+$copyright-text-font: 12px PoppinsRegular
+
+body
+    margin: 0
+    color: var(--white)
+    background-color: var(--dark-gray)
+    background: var(--dark-gray) url("/assets/bg_1.jpg") no-repeat fixed center
+    background-size: cover
+    display: grid
+    grid-template-rows: auto 40px
+    grid-template-areas: "main" "footer"
+    min-height: 100vh
+
+main
+    grid-area: main
+footer
+    grid-area: footer
+
+:root
+    --black: #000000
+    --dark-gray: #333333
+    --gray: #8A8A8A
+    --white: #FFFFFF
+    --yellow: #F7B500
+    --red: #FF3232
+    --blue: #00D2FF
+    --green: #2ECC71
+    --footer-height: 40px
+
+.copyright-text
+    font: $copyright-text-font
+    float: right
+    margin: 11px 17px
+
+app-root
+    align-content: center
+    display: grid
+    height: 100%
+
+.login-container
+    display: flex
+    justify-content: center
+    flex-direction: column
+    .sub-title
+        font: $login-sub-title-font
+    .main-title
+        font: $login-main-title-font
+        padding-bottom: 1em
+    .sub-title,.main-title
+        text-align: center
+    form
+        display: flex
+        flex-direction: column
+        text-align: center
+        align-self: center
+        align-content: center
+        .form-group
+            padding: 1em
+        label
+            font: $field-title-font
+            display: block
+        input[type="text"],input[type="password"]
+            font: $field-text-font
+            text-align: center
+        button
+            margin: 40px
+            background-color: var(--yellow)
+            color: var(--black)
+            border-radius: 10px
+            font: $login-button-font
