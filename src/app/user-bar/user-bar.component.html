@@ -1,0 +1,10 @@
+<div class="navbar" *ngIf="user">
+  <div class="username">
+    <img src="assets/user.png" />
+    {{ user.lastName }} {{ user.firstName }}
+  </div>
+  <div>
+    <button (click)="logout()">Űrhajó elhagyása</button>
+    <img src="assets/logout.png" />
+  </div>
+</div>

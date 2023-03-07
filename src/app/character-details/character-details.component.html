@@ -1,0 +1,38 @@
+<app-user-bar></app-user-bar>
+<ul>
+  <li *ngFor="let character of characters">
+    <div class="character-data">
+      <div class="character-props">
+        <div class="prop">
+          <div
+            class="prop-display"
+            [ngClass]="{
+              dark: character.side == 'DARK'
+            }"
+          ></div>
+          <div class="prop-title">Oldal</div>
+          <div class="prop-value">{{ character.side }}</div>
+        </div>
+        <div class="prop">
+          <div class="prop-display">
+            <img src="/assets/star.png" alt="star" />
+          </div>
+          <div class="prop-title">Különleges erő</div>
+          <div class="prop-value">{{ character.force.power }}</div>
+        </div>
+      </div>
+      <h1 class="character-title">{{ character.name }}</h1>
+      <p class="character-desc">{{ character.description }}</p>
+      <div class="character-modules">
+        <h3>Modulok</h3>
+        <section>
+          <button>Karakter kiválasztása</button>
+          <button>Küzdelem indítása</button>
+        </section>
+      </div>
+    </div>
+    <div class="character-design">
+      <img src="/assets/{{ character.id }}.png" alt="{{ character.id }}" />
+    </div>
+  </li>
+</ul>
