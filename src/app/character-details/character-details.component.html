@@ -12,7 +12,9 @@
         ></div>
         <div class="prop-meta">
           <div class="prop-title">Oldal</div>
-          <div class="prop-value">{{ activeCharacter.side }}</div>
+          <div class="prop-value">
+            {{ activeCharacter.side == "DARK" ? "Sötét" : "Világos" }}
+          </div>
         </div>
       </div>
       <div class="prop">
@@ -37,8 +39,15 @@
         <div class="section-details">
           <p>Válasz két karaktert ellentétes oldalról</p>
           <div class="section-actions">
-            <button>Karakter kiválasztása</button>
-            <button>Küzdelem indítása</button>
+            <button
+              [class.selected]="selectedCharacters.includes(activeCharacter)"
+              (click)="selectCharacter(activeCharacter)"
+            >
+              Karakter kiválasztása
+            </button>
+            <button *ngIf="isSelectedCharactersFull()" (click)="startBattle()">
+              Küzdelem indítása
+            </button>
           </div>
         </div>
       </section>
@@ -50,6 +59,7 @@
         <button
           *ngFor="let character of characters; index as characterIndex"
           [class.current]="characterIndex == activeCharacterIndex"
+          [class.selected]="isCharacterAlreadySelected(character)"
           (click)="jumpTo(characterIndex)"
         ></button>
       </div>
@@ -64,7 +74,7 @@
     </div>
     <img
       src="/assets/{{ activeCharacter.id }}.png"
-      alt="{{ activeCharacter.id }}"
+      alt="{{ activeCharacter.name }}"
       class="character-design"
     />
   </div>

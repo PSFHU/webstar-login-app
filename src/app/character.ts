@@ -7,6 +7,11 @@ export interface Character {
   description: string;
 }
 
+export interface BattleCharacter {
+  character: Character;
+  healt: number;
+}
+
 export interface Characters {
   characters: Character[];
 }

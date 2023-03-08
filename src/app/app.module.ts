@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { UserBarComponent } from './user-bar/user-bar.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { CharacterBattleComponent } from './character-battle/character-battle.component';
+import { BattleMetaComponent } from './battle-meta/battle-meta.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { AuthInterceptor } from './auth.interceptor';
     LoginComponent,
     CharacterDetailsComponent,
     UserBarComponent,
+    CharacterBattleComponent,
+    BattleMetaComponent,
   ],
   imports: [
     BrowserModule,

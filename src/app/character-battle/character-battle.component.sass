@@ -1,0 +1,63 @@
+$character-battle-h1-font: 60px StarJedi
+$character-battle-h3-font: 150px DistantGalaxy
+$character-side-font: 24px PoppinsBlack
+
+h3
+    font: $character-battle-h3-font
+
+.background
+    background: var(--dark-gray) url("/assets/bg_3.jpg") no-repeat fixed center
+    background-size: cover
+
+.character-battle-container
+    display: flex
+    flex-direction: column
+    margin: auto
+    max-width: var(--max-site-width)
+    max-height: var(--max-main-height)
+    h1
+        text-align: center
+        font: $character-battle-h1-font
+        line-height: 1em
+
+.character-container
+    display: grid
+    margin: 2em auto
+    grid-template-columns: 1fr 0.5fr 1fr
+    .character-side
+        text-align: center
+        font: $character-side-font
+
+.character-design
+    position: relative
+    max-height: calc(var(--max-main-height) - 40vh)
+    &::before
+        content: ""
+        background-color: var(--yellow)
+        border-radius: 100%
+        height: 70%
+        width: 70%
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: auto 0% auto auto
+
+.darkside
+    .character-design
+        &::before
+            background-color: var(--black)
+            margin: auto auto auto 0
+    .progress
+        background-color: var(--red)
+.lightside
+    .character-design
+        &::before
+            background-color: var(--white)
+    .character-name
+        text-align: right
+    .progress-bar-body
+        justify-content: flex-end
+        .progress
+            background-color: var(--yellow)

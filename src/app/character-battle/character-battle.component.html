@@ -1,0 +1,39 @@
+<div class="background"></div>
+<app-user-bar></app-user-bar>
+<div
+  class="character-battle-container"
+  *ngIf="darksideCharacter && lightsideCharacter"
+>
+  <h1>A Tudás legyen veled!</h1>
+  <div class="character-container">
+    <div class="darkside">
+      <div class="character-side">Sötét oldal</div>
+      <div class="character-design">
+        <img
+          src="/assets/{{ darksideCharacter.character.id }}.png"
+          alt="{{ darksideCharacter.character.name }}"
+          class="character-design"
+        />
+      </div>
+      <app-battle-meta
+        [characterName]="darksideCharacter.character.name"
+        [healt]="darksideCharacter.healt"
+      ></app-battle-meta>
+    </div>
+    <h3>VS</h3>
+    <div class="lightside">
+      <div class="character-side">Világos oldal</div>
+      <div class="character-design">
+        <img
+          src="/assets/{{ lightsideCharacter.character.id }}.png"
+          alt="{{ lightsideCharacter.character.name }}"
+          class="character-design"
+        />
+      </div>
+      <app-battle-meta
+        [characterName]="lightsideCharacter.character.name"
+        [healt]="lightsideCharacter.healt"
+      ></app-battle-meta>
+    </div>
+  </div>
+</div>

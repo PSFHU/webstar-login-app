@@ -1,0 +1,12 @@
+<h3
+  class="character-name"
+  [innerHTML]="characterName?.toLocaleLowerCase()?.replace('<br>', ' ')"
+></h3>
+<div class="progress-bar-container">
+  <div class="progress-bar-body">
+    <div class="progress" [ngStyle]="{ width: healt + '%' }"></div>
+  </div>
+  <div class="progress-percent" [ngStyle]="{ width: healt + '%' }">
+    {{ healt }}%
+  </div>
+</div>
