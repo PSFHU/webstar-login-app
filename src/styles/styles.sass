@@ -7,15 +7,10 @@
 
 @include local-font("Starjedi","StarJedi")
 @include local-font("SfDistantGalaxyAltoutline-e2Bp","DistantGalaxy")
+@include local-font("Poppins-Black","PoppinsBlack")
 @include local-font("Poppins-Bold","PoppinsBold")
 @include local-font("Poppins-Regular","PoppinsRegular")
 
-$login-sub-title-font: 30px StarJedi
-$login-main-title-font: 70px DistantGalaxy
-$login-button-font: 16px PoppinsBold
-
-$field-title-font: 14px PoppinsBold
-$field-text-font: 16px PoppinsRegular
 
 $copyright-text-font: 12px PoppinsRegular
 
@@ -23,8 +18,6 @@ body
     margin: 0
     color: var(--white)
     background-color: var(--dark-gray)
-    background: var(--dark-gray) url("/assets/bg_1.jpg") no-repeat fixed center
-    background-size: cover
     display: grid
     grid-template-rows: auto 40px
     grid-template-areas: "main" "footer"
@@ -34,6 +27,9 @@ main
     grid-area: main
 footer
     grid-area: footer
+
+button
+    cursor: pointer
 
 :root
     --black: #000000
@@ -45,45 +41,19 @@ footer
     --blue: #00D2FF
     --green: #2ECC71
     --footer-height: 40px
+    --max-site-width: 1400px
+    --max-main-height: 80vh
+    --paginator-button-size: 8px
+
+.background
+    position: absolute
+    width: 100vw
+    height: 100vh
+    top: 0px
+    z-index: -1
 
 .copyright-text
     font: $copyright-text-font
     float: right
     margin: 11px 17px
 
-app-root
-    align-content: center
-    display: grid
-    height: 100%
-
-.login-container
-    display: flex
-    justify-content: center
-    flex-direction: column
-    .sub-title
-        font: $login-sub-title-font
-    .main-title
-        font: $login-main-title-font
-        padding-bottom: 1em
-    .sub-title,.main-title
-        text-align: center
-    form
-        display: flex
-        flex-direction: column
-        text-align: center
-        align-self: center
-        align-content: center
-        .form-group
-            padding: 1em
-        label
-            font: $field-title-font
-            display: block
-        input[type="text"],input[type="password"]
-            font: $field-text-font
-            text-align: center
-        button
-            margin: 40px
-            background-color: var(--yellow)
-            color: var(--black)
-            border-radius: 10px
-            font: $login-button-font

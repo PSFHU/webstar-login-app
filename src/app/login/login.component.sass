@@ -1,1 +1,49 @@
+$login-sub-title-font: 30px StarJedi
+$login-main-title-font: 70px DistantGalaxy
+$login-button-font: 16px PoppinsBold
 
+$field-title-font: 14px PoppinsBold
+$field-text-font: 16px PoppinsRegular
+
+.background
+    background: var(--dark-gray) url("/assets/bg_1.jpg") no-repeat fixed center
+    background-size: cover
+
+.login-container
+    display: flex
+    justify-content: center
+    flex-direction: column
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    .sub-title
+        font: $login-sub-title-font
+    .main-title
+        font: $login-main-title-font
+        padding-bottom: 1em
+    .sub-title,.main-title
+        text-align: center
+    form
+        display: flex
+        flex-direction: column
+        text-align: center
+        align-self: center
+        align-content: center
+        .form-group
+            padding: 1em
+        label
+            font: $field-title-font
+            display: block
+        input[type="text"],input[type="password"]
+            font: $field-text-font
+            text-align: center
+        button
+            margin: 40px
+            background-color: var(--yellow)
+            color: var(--black)
+            border: none
+            padding: 0.5em 0em
+            border-radius: 10px
+            font: $login-button-font

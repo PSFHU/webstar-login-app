@@ -1,0 +1,146 @@
+$character-prop-title-font: 16px PoppinsBold
+$character-prop-value-font: 20px PoppinsBlack
+$character-name-font: 90px StarJedi
+$character-p-font: 16px PoppinsRegular
+$character-modules-h3-font: 24px PoppinsBlack
+$character-section-h4-font: 18px PoppinsBold
+$character-button-font: 16px PoppinsBold
+
+.background
+    background: var(--dark-gray) url("/assets/bg_2.jpg") no-repeat fixed center
+    background-size: cover
+
+.character
+    display: grid
+    margin: 2em auto
+    grid-template-columns: 1fr 1fr
+    max-width: var(--max-site-width)
+    max-height: var(--max-main-height)
+    h1
+        width: 0
+
+.character-design
+    position: relative
+    max-height: var(--max-main-height)
+    .navigation
+        display: flex
+        justify-content: flex-end
+        gap: 2em
+        .paginator
+            display: flex
+            gap: 0.5em
+            align-items: center
+            button
+                display: block
+                position: relative
+                cursor: pointer
+                width: var(--paginator-button-size)
+                height: var(--paginator-button-size)
+                border: none
+                background-color: transparent
+                &::before,&::after
+                    content: ''
+                    position: absolute
+                    top: 0
+                    border: 2px solid transparent
+                    border-radius: 50%
+                    width: 100%
+                    height: 100%
+                &::before
+                    background-color: var(--gray)
+                    transform: scale(.3)
+                &.current
+                    &::before
+                        content: ''
+                        background-color: var(--white)
+                    &::after
+                        border-color: var(--gray)
+                        transform: scale(1.1)
+        .arrows
+            display: flex
+            gap: 1em
+            button
+                display: flex
+                justify-content: center
+                align-items: center
+                background-color: transparent
+                border: none
+                img
+                    transition: filter 0.5s
+                &:hover
+                    img
+                        filter: brightness(80%)
+        .forward
+            transform: rotate(180deg)
+    &::before
+        content: ""
+        background-color: var(--yellow)
+        border-radius: 100%
+        height: 70%
+        width: 70%
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: auto 0% auto auto
+.character-data
+    h3
+        font: $character-modules-h3-font
+    h4
+        font: $character-section-h4-font
+    button
+        display: flex
+        border: 2px var(--yellow) solid
+        border-radius: 5px
+        padding: 0.5em 1em
+        background-color: var(--black)
+        color: var(--white)
+        font: $character-button-font
+        &:hover
+            background-color: var(--yellow)
+            color: var(--black)
+    p
+        font: $character-p-font
+    section
+        display: grid
+        grid-template-columns: 0.4fr 1fr
+        h4
+            margin: 0
+        .section-details
+            p
+                margin: 0 0 1em 0
+            .section-actions
+                display: flex
+                gap: 1em
+    .character-name
+        font: $character-name-font
+        line-height: 90px
+    .character-props
+        display: flex
+        gap: 2em
+        .prop
+            display: flex
+            gap: 1em
+            .prop-display
+                display: flex
+                width: 54px
+                height: 100%
+                background-color: var(--white)
+                margin: auto
+                justify-content: center
+                align-items: center
+                &.prop-power
+                    background-color: var(--yellow)
+                &.dark:after
+                    content: ''
+                    display: block
+                    width: calc( 54px - 20px )
+                    height: calc( 54px - 20px)
+                    background-color: var(--black)
+            .prop-meta
+                .prop-title
+                    font: $character-prop-title-font
+                    color: var(--yellow)
+                .prop-value
+                    font: $character-prop-value-font
